@@ -1,0 +1,25 @@
+.custom-picker .react-colorful {
+  height: 240px;
+}
+
+.custom-picker .react-colorful__saturation {
+  border-radius: 10px;
+}
+
+.custom-picker .react-colorful__saturation-pointer {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+.custom-picker .react-colorful__hue {
+  margin-top: 10px;
+  height: 12px;
+  border-radius: 10px;
+}
+
+.custom-picker .react-colorful__hue-pointer {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
