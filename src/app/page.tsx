@@ -10,8 +10,8 @@ export default function Home() {
       <div className="h-full w-full flex">
         <Sidebar />
         <div className="w-full h-full">
-          <main className="p-4 flex gap-4 w-full h-full">
-            <div className="flex flex-col gap-6">
+          <main className="p-4 flex lg:flex-row flex-col-reverse gap-4 w-full h-full">
+            <div className="flex flex-col gap-6 lg:w-1/6 w-full">
               <IconPicker />
             </div>
             <Preview />

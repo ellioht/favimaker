@@ -1,17 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
-import {
-  Book,
-  Bot,
-  Brush,
-  Code2,
-  LifeBuoy,
-  RefreshCcw,
-  Settings2,
-  SquareTerminal,
-  SquareUser,
-  Triangle,
-} from "lucide-react";
+import { Brush, LifeBuoy } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 const Sidebar = () => {

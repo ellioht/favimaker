@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -12,31 +12,20 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { LucideIcon as LucideIconComponent } from "./lucide-icon";
 import * as LucideIcons from "lucide-react";
-import next from "next";
-import { Input } from "./ui/input";
-import {
-  Command,
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { useFaviContext } from "./favi-provider";
 
 interface IconsDialogProps {
   open: boolean;
   setOpen: (open: boolean) => void;
-  setSelectedIcon: (icon: string) => void;
 }
 
-const IconsDialog = ({ open, setOpen, setSelectedIcon }: IconsDialogProps) => {
+const IconsDialog = ({ open, setOpen }: IconsDialogProps) => {
+  const { setSelectedIcon } = useFaviContext();
   const [visibleIcons, setVisibleIcons] = useState<string[]>([]);
   const [batchSize, setBatchSize] = useState<number>(40);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searching, setSearching] = useState<boolean>(false);
   const buffer = 100;
 
   useEffect(() => {
@@ -61,17 +50,23 @@ const IconsDialog = ({ open, setOpen, setSelectedIcon }: IconsDialogProps) => {
   const handleSearchIcons = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
     setSearchQuery(query);
-  
+    setSearching(true);
+    searchIcons(query);
+  };
+
+  const searchIcons = (query: string) => {
     if (query === "") {
       setVisibleIcons(Object.keys(LucideIcons).slice(0, 40));
+      setSearching(false);
     } else {
       const filteredIcons = Object.keys(LucideIcons).filter((icon) =>
         icon.toLowerCase().includes(query.toLowerCase())
       );
-      setVisibleIcons(filteredIcons);
+      setVisibleIcons(filteredIcons.slice(0, 40));
+      setSearching(false);
     }
   };
-  
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="px-4 py-6">
@@ -92,26 +87,34 @@ const IconsDialog = ({ open, setOpen, setSelectedIcon }: IconsDialogProps) => {
           </div>
         </div>
         <ScrollArea className="h-[600px] w-full px-4" onScroll={(e) => handleScroll(e)}>
-          <div className="grid grid-cols-4 gap-4">
-            {visibleIcons &&
-              visibleIcons.map((icon, index) => {
-                return icon && (
-                  <div className="flex flex-col" key={index}>
-                    <DialogTrigger
-                      key={icon}
-                      onClick={() => {
-                        setSelectedIcon(icon);
-                        setOpen(false);
-                      }}
-                      className="bg-muted hover:bg-accent-foreground/20 rounded-md p-1 flex items-center justify-center aspect-square"
-                    >
-                      <LucideIconComponent name={icon} size={64} />
-                    </DialogTrigger>
-                    <span className="text-xs mt-1 break-words">{icon}</span>
-                  </div>
-                );
-              })}
-          </div>
+          {searching ? (
+            <div className="w-full h-[600px] flex items-center justify-center">
+              <LucideIcons.Loader className="h-16 w-16 animate-spin text-muted" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-4 gap-4">
+              {visibleIcons &&
+                visibleIcons.map((icon, index) => {
+                  return (
+                    icon && (
+                      <div className="flex flex-col" key={index}>
+                        <DialogTrigger
+                          key={icon}
+                          onClick={() => {
+                            setSelectedIcon(icon);
+                            setOpen(false);
+                          }}
+                          className="bg-muted hover:bg-accent-foreground/20 rounded-md p-1 flex items-center justify-center aspect-square"
+                        >
+                          <LucideIconComponent name={icon} size={64} />
+                        </DialogTrigger>
+                        <span className="text-xs mt-1 break-words">{icon}</span>
+                      </div>
+                    )
+                  );
+                })}
+            </div>
+          )}
         </ScrollArea>
       </DialogContent>
     </Dialog>
