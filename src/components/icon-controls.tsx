@@ -9,8 +9,8 @@ import { useFaviContext } from "./favi-provider";
 import { Input } from "./ui/input";
 import { Slider } from "@/components/ui/slider"
 
-const IconPicker = () => {
-  const { bgColor, setBgColor, iconColor, setIconColor, selectedIcon, iconSize, setIconSize, iconRot, setIconRot } = useFaviContext();
+const IconControls = () => {
+  const { iconColor, setIconColor, selectedIcon, iconSize, setIconSize, iconRot, setIconRot } = useFaviContext();
   const [openIconDialog, setOpenIconDialog] = useState(false);
 
   const handleOpenIconDialog = () => {
@@ -40,17 +40,6 @@ const IconPicker = () => {
           />
         </div>
         <div className="grid gap-3">
-          <Label htmlFor="bg-color">Background Colour</Label>
-          <Input
-            type="color"
-            id="bg-color"
-            name="bg-color"
-            value={bgColor}
-            onChange={(e) => setBgColor(e.target.value)}
-            className="w-full"
-          />
-        </div>
-        <div className="grid gap-3">
           <Label htmlFor="icon-size">Icon Size</Label>
           <Slider id="icon-size" value={[iconSize]} onValueChange={(value) => setIconSize(value[0])} max={600} min={1} step={1} />
         </div>
@@ -63,4 +52,4 @@ const IconPicker = () => {
   );
 };
 
-export default IconPicker;
+export default IconControls;
