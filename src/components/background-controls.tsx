@@ -5,22 +5,25 @@ import { Label } from "./ui/label";
 import { useFaviContext } from "./favi-provider";
 import { Input } from "./ui/input";
 import { Slider } from "@/components/ui/slider";
+import ColorPicker from "./color-picker";
 
 const BackgroundControls = () => {
-  const { bgColor, setBgColor, bgSize, setBgSize, bgRounded, setBgRounded, bgShadowSize, setBgShadowSize } = useFaviContext();
+  const {
+    bgColor,
+    setBgColor,
+    bgSize,
+    setBgSize,
+    bgRounded,
+    setBgRounded,
+    bgShadowSize,
+    setBgShadowSize,
+  } = useFaviContext();
 
   return (
     <div className="grid gap-6 border p-4 rounded-xl">
       <div className="grid gap-3">
-        <Label htmlFor="bg-color">Background Colour</Label>
-        <Input
-          type="color"
-          id="bg-color"
-          name="bg-color"
-          value={bgColor}
-          onChange={(e) => setBgColor(e.target.value)}
-          className="w-full"
-        />
+        <Label htmlFor="bg-color">Background Color</Label>
+        <ColorPicker color={bgColor} setColor={setBgColor} />
       </div>
       <div className="grid gap-3">
         <Label htmlFor="icon-size">Background Size</Label>

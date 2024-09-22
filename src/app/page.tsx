@@ -3,21 +3,24 @@ import Nav from "@/components/nav";
 import Preview from "@/components/preview";
 import IconControls from "@/components/icon-controls";
 import BackgroundControls from "@/components/background-controls";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   return (
-    <div className="h-screen w-full flex flex-col">
+    <div className="h-screen w-full flex flex-col overflow-auto">
       <Nav />
-      <div className="h-full w-full flex">
+      <div className="h-full w-full flex overflow-auto">
         <Sidebar />
-        <div className="w-full h-full">
-          <main className="p-4 flex lg:flex-row flex-col-reverse gap-4 w-full h-full">
-            <div className="flex flex-col gap-6 lg:w-1/6 w-full">
+        <div className="flex lg:flex-row flex-col-reverse gap-4 w-full lg:h-full h-auto">
+          <ScrollArea className="lg:w-1/6 w-full h-full lg:pt-4 pt-0 pl-4 pr-4 lg:pr-0">
+            <div className="flex flex-col gap-4 pb-4">
               <IconControls />
               <BackgroundControls />
             </div>
+          </ScrollArea>
+          <div className="pl-4 lg:pl-0 pr-4 pt-4 pb-0 lg:pb-4 w-full">
             <Preview />
-          </main>
+          </div>
         </div>
       </div>
     </div>
