@@ -3,7 +3,6 @@
 import React from "react";
 import { Label } from "./ui/label";
 import { useFaviContext } from "./favi-provider";
-import { Input } from "./ui/input";
 import { Slider } from "@/components/ui/slider";
 import ColorPicker from "./color-picker";
 

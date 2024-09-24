@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div style="display: flex; justify-content: center; align-items: center; padding: 30px 0;">
+    <a href="https://favimaker.com" style="font-size: 32px; font-weight: bold; color: #fff; text-decoration: none;">
+        Favimaker
+    </a>
+</div>
 
-## Getting Started
+![Favimaker-CI](https://github.com/ellioht/favimaker/workflows/ci.yml/badge.svg)
 
-First, run the development server:
+Favimaker is a web app that allows you to create a favicon using a simple configurator interface and download it as a file. [Try it now!](https://favimaker.com)
+
+***
+
+## Features
+
+- **Design**: Create a favicon from a set of controls that allow you to customize the appearance of the icon.
+- **Download**: Download the generated favicon as a `.png` file.
+
+## Upcoming Features
+
+- **Convert**: Convert any icon from png to ico and vice versa.
+- **Download types**: Download the generated favicon as a `.ico` file.
+
+***
+
+## Building Locally
+
+Step 1: Clone the repository
+
+```bash
+git clone https://github.com/ellioht/favimaker.git
+```
+
+Step 2: Install dependencies
+
+```bash
+npm install
+```
+
+Step 3: Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+***
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+As this is my personal project I am not accepting any pull requests at the moment. Feel free to create an issue if you have any suggestions or feedback.
 
-## Learn More
+***
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+_Visit the website: [Favimaker](https://favimaker.com)_
