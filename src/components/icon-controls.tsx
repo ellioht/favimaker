@@ -37,8 +37,8 @@ const IconControls = () => {
           </Button>
         </div>
         <div className="grid gap-3">
-          <Label htmlFor="bg-color">Icon Color</Label>
-          <ColorPicker color={iconColor} setColor={setIconColor} />
+          <Label htmlFor="icon-color">Icon Color</Label>
+          <ColorPicker id="icon-color" color={iconColor} setColor={setIconColor} />
         </div>
         <div className="grid gap-3">
           <Label htmlFor="icon-size">Icon Size</Label>

@@ -3,21 +3,22 @@ import React from "react";
 interface ColorPickerProps {
   color: string;
   setColor: (color: string) => void;
+  id?: string;
 }
 
-const ColorPicker = ({ color, setColor }: ColorPickerProps) => {
+const ColorPicker = ({ color, setColor, id }: ColorPickerProps) => {
   return (
     <div className="w-full">
       <input
         type="color"
-        id="bg-color"
+        id={id}
         name="bg-color"
         value={color}
         onChange={(e) => setColor(e.target.value)}
         className="hidden"
       />
       <label
-        htmlFor="bg-color"
+        htmlFor={id}
         className="block w-full cursor-pointer border rounded-md"
         style={{ backgroundColor: color }}
       >

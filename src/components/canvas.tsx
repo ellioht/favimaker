@@ -32,7 +32,7 @@ const Canvas = () => {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="0"
           strokeLinecap="round"
           strokeLinejoin="round"
           style={{ borderRadius: `${bgRounded}%` }}

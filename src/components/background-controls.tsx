@@ -23,7 +23,7 @@ const BackgroundControls = () => {
     <div className="grid gap-6 border p-4 rounded-xl">
       <div className="grid gap-3">
         <Label htmlFor="bg-color">Background Color</Label>
-        <ColorPicker color={bgColor} setColor={setBgColor} />
+        <ColorPicker id="bg-color" color={bgColor} setColor={setBgColor} />
       </div>
       <div className="grid gap-3">
         <Label htmlFor="icon-size">Background Size</Label>
