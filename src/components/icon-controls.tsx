@@ -6,7 +6,6 @@ import { Button } from "./ui/button";
 import IconsDialog from "./icons-dialog";
 import { LucideIcon } from "./lucide-icon";
 import { useFaviContext } from "./favi-provider";
-import { Input } from "./ui/input";
 import { Slider } from "@/components/ui/slider";
 import ColorPicker from "./color-picker";
 

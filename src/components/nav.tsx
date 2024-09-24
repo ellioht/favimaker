@@ -15,7 +15,7 @@ const Nav = () => {
 
     const link = document.createElement("a");
     link.setAttribute("download", "icon.png");
-    let image = canvasRef.current.toDataURL("image/png");
+    const image = canvasRef.current.toDataURL("image/png");
     link.setAttribute("href", image);
     link.click();
   };

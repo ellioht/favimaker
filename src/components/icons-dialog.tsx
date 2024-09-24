@@ -30,7 +30,7 @@ const IconsDialog = ({ open, setOpen }: IconsDialogProps) => {
 
   useEffect(() => {
     setSearchQuery("");
-    setVisibleIcons(Object.keys(LucideIcons).slice(0, 40));
+    setVisibleIcons(Object.keys(LucideIcons).slice(0, batchSize));
   }, [open]);
 
   const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
