@@ -1,12 +1,10 @@
-<div style="display: flex; justify-content: center; align-items: center; padding: 30px 0;">
-    <a href="https://favimaker.com" style="font-size: 32px; font-weight: bold; color: #fff; text-decoration: none;">
-        Favimaker
-    </a>
-</div>
+# Favimaker
 
-![Favimaker-CI](https://github.com/ellioht/favimaker/workflows/ci.yml/badge.svg)
+![Favimaker-CI](https://github.com/ellioht/favimaker/action/workflows/ci.yml/badge.svg)
 
 Favimaker is a web app that allows you to create a favicon using a simple configurator interface and download it as a file. [Try it now!](https://favimaker.com)
+
+![favimaker](https://raw.githubusercontent.com/ellioht/favimaker/main/assets/favimaker-screen-1.png)
 
 ***
 
