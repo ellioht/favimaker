@@ -1,6 +1,6 @@
 # Favimaker
 
-![Favimaker-CI](https://github.com/ellioht/favimaker/action/workflows/ci.yml/badge.svg)
+![Favimaker-CI](https://github.com/ellioht/favimaker/actions/workflows/ci.yml/badge.svg)
 
 Favimaker is a web app that allows you to create a favicon using a simple configurator interface and download it as a file. [Try it now!](https://favimaker.com)
 
