@@ -2,7 +2,7 @@ import * as React from "react";
 import * as LucideIcons from "lucide-react";
 
 interface LucideIconProps extends React.HTMLAttributes<HTMLDivElement> {
-  name: string;
+  name: string | keyof typeof LucideIcons | null;
   size?: number;
   color?: string;
   rotate?: string;

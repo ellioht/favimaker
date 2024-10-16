@@ -8,9 +8,10 @@ import { LucideIcon } from "./lucide-icon";
 import { useFaviContext } from "./favi-provider";
 import { Slider } from "@/components/ui/slider";
 import ColorPicker from "./color-picker";
+import { X } from "lucide-react";
 
 const IconControls = () => {
-  const { iconColor, setIconColor, selectedIcon, iconSize, setIconSize, iconRot, setIconRot } =
+  const { iconColor, setIconColor, selectedIcon, setSelectedIcon, iconSize, setIconSize, iconRot, setIconRot } =
     useFaviContext();
   const [openIconDialog, setOpenIconDialog] = useState(false);
 
@@ -18,12 +19,23 @@ const IconControls = () => {
     setOpenIconDialog(true);
   };
 
+  const handleRemoveIcon = () => {
+    setSelectedIcon(null);
+  };
+
   return (
     <>
       <IconsDialog open={openIconDialog} setOpen={setOpenIconDialog} />
       <div className="grid gap-6 border p-4 rounded-xl">
         <div className="grid gap-3">
-          <Label htmlFor="icon">Icon</Label>
+          <div className="w-full flex items-center justify-start gap-2">
+            <Label htmlFor="icon">Icon</Label>
+            {selectedIcon && (
+              <button className="bg-muted rounded-sm" onClick={handleRemoveIcon}>
+                <X size={16} className="text-muted-foreground" />
+              </button>
+            )}
+          </div>
           <Button
             id="icon"
             variant="outline"
