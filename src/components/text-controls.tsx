@@ -40,30 +40,32 @@ const TextControls = () => {
         <Input id="icon" value={textValue} onChange={(e) => setTextValue(e.target.value)} />
       </div>
       <div className="grid gap-3">
-        <Label htmlFor="icon">Font</Label>
-        <Select onValueChange={(v) => setTextFont(v)}>
-          <SelectTrigger>
-            <SelectValue placeholder="Choose Font" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Fonts</SelectLabel>
-              <SelectItem value="Arial">Arial</SelectItem>
-              <SelectItem value="Helvetica">Helvetica</SelectItem>
-              <SelectItem value="Times New Roman">Times New Roman</SelectItem>
-              <SelectItem value="Courier New">Courier New</SelectItem>
-              <SelectItem value="Verdana">Verdana</SelectItem>
-              <SelectItem value="Georgia">Georgia</SelectItem>
-              <SelectItem value="Palatino">Palatino</SelectItem>
-              <SelectItem value="Garamond">Garamond</SelectItem>
-              <SelectItem value="Bookman">Bookman</SelectItem>
-              <SelectItem value="Comic Sans MS">Comic Sans MS</SelectItem>
-              <SelectItem value="Trebuchet MS">Trebuchet MS</SelectItem>
-              <SelectItem value="Arial Black">Arial Black</SelectItem>
-              <SelectItem value="Impact">Impact</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+        <Label htmlFor="font">Font</Label>
+        <div id="font" className="w-full truncate">
+          <Select onValueChange={(v) => setTextFont(v)}>
+            <SelectTrigger>
+              <SelectValue placeholder="Choose Font" className="truncate" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Fonts</SelectLabel>
+                <SelectItem value="Arial">Arial</SelectItem>
+                <SelectItem value="Helvetica">Helvetica</SelectItem>
+                <SelectItem value="Times New Roman">Times New Roman</SelectItem>
+                <SelectItem value="Courier New">Courier New</SelectItem>
+                <SelectItem value="Verdana">Verdana</SelectItem>
+                <SelectItem value="Georgia">Georgia</SelectItem>
+                <SelectItem value="Palatino">Palatino</SelectItem>
+                <SelectItem value="Garamond">Garamond</SelectItem>
+                <SelectItem value="Bookman">Bookman</SelectItem>
+                <SelectItem value="Comic Sans MS">Comic Sans MS</SelectItem>
+                <SelectItem value="Trebuchet MS">Trebuchet MS</SelectItem>
+                <SelectItem value="Arial Black">Arial Black</SelectItem>
+                <SelectItem value="Impact">Impact</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
       <div className="grid gap-3">
         <Label htmlFor="text-color">Text Color</Label>
