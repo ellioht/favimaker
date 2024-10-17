@@ -4,9 +4,11 @@ import React from "react";
 import { Download } from "lucide-react";
 import { Button } from "./ui/button";
 import { useFaviContext } from "./favi-provider";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
   const { canvasRef } = useFaviContext();
+  const pathname = usePathname();
 
   const saveImageToLocal = () => {
     if (!canvasRef.current) {
@@ -57,26 +59,28 @@ const Nav = () => {
         <span className="hidden sm:block font-light">-</span>
         <span className="hidden sm:block font-light">Make your Favicon</span>
       </h1>
-      <div className="flex gap-2 ml-auto">
-        <Button
-          variant="outline"
-          size="sm"
-          className="ml-auto gap-1.5 text-sm"
-          onClick={downloadIco}
-        >
-          <Download className="size-3.5" />
-          <span className="hidden sm:block">Download </span>ICO
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          className="ml-auto gap-1.5 text-sm"
-          onClick={saveImageToLocal}
-        >
-          <Download className="size-3.5" />
-          <span className="hidden sm:block">Download </span>PNG
-        </Button>
-      </div>
+      {pathname === "/" && (
+        <div className="flex gap-2 ml-auto">
+          <Button
+            variant="outline"
+            size="sm"
+            className="ml-auto gap-1.5 text-sm"
+            onClick={downloadIco}
+          >
+            <Download className="size-3.5" />
+            <span className="hidden sm:block">Download </span>ICO
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className="ml-auto gap-1.5 text-sm"
+            onClick={saveImageToLocal}
+          >
+            <Download className="size-3.5" />
+            <span className="hidden sm:block">Download </span>PNG
+          </Button>
+        </div>
+      )}
     </header>
   );
 };

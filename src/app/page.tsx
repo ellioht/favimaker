@@ -12,8 +12,8 @@ export default function Home() {
       <Nav />
       <div className="h-full w-full flex overflow-auto">
         <Sidebar />
-        <div className="flex lg:flex-row flex-col-reverse gap-1 w-full lg:h-full h-auto">
-          <ScrollArea className="lg:w-1/6 w-full h-full lg:pt-4 pt-0 pl-4 pr-4 lg:pr-3">
+        <div className="flex xl:flex-row flex-col-reverse gap-1 w-full xl:h-full h-auto">
+          <ScrollArea className="xl:w-[300px] w-full h-full pt-4 pl-4 pr-4 xl:pr-3">
             <ScrollBar orientation="vertical" />
             <div className="flex flex-col gap-4 pb-4">
               <IconControls />
@@ -21,7 +21,7 @@ export default function Home() {
               <BackgroundControls />
             </div>
           </ScrollArea>
-          <div className="pl-4 lg:pl-0 pr-4 pt-4 pb-0 lg:pb-4 w-full">
+          <div className="pl-4 xl:pl-0 pr-4 pt-4 pb-0 xl:pb-4 w-full">
             <Preview />
           </div>
         </div>
